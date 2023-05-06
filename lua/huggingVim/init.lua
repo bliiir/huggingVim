@@ -1,4 +1,4 @@
--- https://www.linode.com/docs/guides/write-a-neovim-plugin-with-lua/
+--  https://www.linode.com/docs/guides/write-a-neovim-plugin-with-lua/
 --  https://huggingface.github.io/text-generation-inference/
 --  https://huggingface.github.io/text-generation-inference/#/Text%20Generation%20Inference/generate_stream
 --  https://huggingface.co/jordiclive/gpt4all-alpaca-oa-codealpaca-lora-7b
@@ -21,10 +21,10 @@ M.heades = headers
 M.status = status
 M.code = code
 M.body = body
+
 local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, { M.body })
-local opts = {noremap = true, silent = true}
-vim.keymap.set({'n'}, '<leader>my', ':lua require"huggingVim<CR>', opts)
+
 
 -- Routes calls made to this module to functions in the
 -- plugin's other modules.
