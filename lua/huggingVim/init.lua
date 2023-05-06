@@ -23,6 +23,8 @@ M.code = code
 M.body = body
 local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, { M.body })
+local opts = {noremap = true, silent = true}
+vim.keymap.set({'n'}, '<leader>my', ':lua require"huggingVim<CR>', opts)
 
 -- Routes calls made to this module to functions in the
 -- plugin's other modules.
